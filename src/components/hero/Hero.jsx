@@ -16,7 +16,7 @@ function Hero() {
         className="pointer-events-none absolute left-1/2 top-[-120px] h-[480px] w-[780px] -translate-x-1/2 rounded-full bg-emerald-500/25 blur-[120px]"
         style={{ animation: "pulseGlow 6s ease-in-out infinite" }}
       />
-      <div className="relative mx-auto max-w-3xl px-6">
+      <div className="relative mx-auto max-w-3xl px-6 pt-4">
         <Reveal>
           <Eyebrow>AI Agents for Business</Eyebrow>
         </Reveal>
