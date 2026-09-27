@@ -84,7 +84,7 @@ export default function AIFinalCTA() {
           <h2 className="final-title mb-2">
 
             <span className="final-title-line">
-              Let AI handle the
+              Let AI handle the.
             </span>
 
             <strong>
