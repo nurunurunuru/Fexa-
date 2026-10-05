@@ -6,6 +6,9 @@ import AIConversationSection from "../ai-chat/sections/AIConversationSection";
 import AIChannelsSection from "../ai-chat/sections/AIChannelsSection";
 import AISocialSection from "../ai-chat/sections/AISocialSection";
 import AIFinalCTA from "../ai-chat/sections/AIFinalCTA";
+import AIMessengerSection from "../ai-chat/sections/AIMessengerSection";
+import AIInstagramSection from "../ai-chat/sections/AIInstagramSection";
+import AIWhatsAppSection from "../ai-chat/sections/AIWhatsAppSection";
 
 export default function AIChatPage() {
   return (
@@ -14,7 +17,10 @@ export default function AIChatPage() {
       <AIChatFeatures />
       <AIConversationSection />
       <AIChannelsSection />
-      <AISocialSection />
+      {/* <AISocialSection /> */}
+      <AIMessengerSection/>
+      <AIInstagramSection/>
+      <AIWhatsAppSection/>
       <AIFinalCTA />
     </main>
   );

@@ -41,19 +41,19 @@ export const FEATURES = [
 ];
 
 export const CHANNELS = [
-  {
-    name: "WhatsApp",
-    className: "channel-whatsapp",
-    symbol: "W",
-  },
-  {
-    name: "Messenger",
-    className: "channel-messenger",
-    symbol: "M",
-  },
-  {
-    name: "Instagram",
-    className: "channel-instagram",
-    symbol: "◎",
-  },
+  // {
+  //   name: "WhatsApp",
+  //   className: "channel-whatsapp",
+  //   symbol: "W",
+  // },
+  // {
+  //   name: "Messenger",
+  //   className: "channel-messenger",
+  //   symbol: "M",
+  // },
+  // {
+  //   name: "Instagram",
+  //   className: "channel-instagram",
+  //   symbol: "◎",
+  // },
 ];

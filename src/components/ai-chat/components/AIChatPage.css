@@ -7250,3 +7250,3008 @@
     animation: none !important;
   }
 }
+
+
+
+
+/* =========================================
+   REALISTIC LIVE CHAT ANIMATIONS
+========================================= */
+
+.live-message,
+.phone-live-message,
+.social-live-message {
+  animation: liveMessageEnter 0.55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes liveMessageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(13px) scale(.96);
+    filter: blur(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.ai-message-delivered {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  color: #48f6b2;
+  opacity: .8;
+}
+
+.live-typing,
+.phone-typing,
+.social-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  padding: 10px 13px;
+  border: 1px solid rgba(65,255,183,.16);
+  border-radius: 14px;
+  background: rgba(20,54,43,.8);
+}
+
+.live-typing span,
+.phone-typing i,
+.social-typing i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #55ffc0;
+  animation: typingBounce .85s ease-in-out infinite;
+}
+
+.live-typing span:nth-child(2),
+.phone-typing i:nth-child(2),
+.social-typing i:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.live-typing span:nth-child(3),
+.phone-typing i:nth-child(3),
+.social-typing i:nth-child(3) {
+  animation-delay: .3s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: .45;
+  }
+
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.phone-delivered,
+.social-delivered {
+  display: inline-block;
+  margin-left: 5px;
+  color: #46eeb0;
+  vertical-align: middle;
+}
+
+.ai-chat-window,
+.ai-phone,
+.social-front-card {
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.42),
+    0 0 35px rgba(22,235,151,.07),
+    inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+.ai-chat-window-wrap,
+.ai-phone-scene,
+.social-scene {
+  perspective: 1000px;
+}
+
+.ai-chat-window {
+  animation: realisticFloat 7s ease-in-out infinite;
+}
+
+.ai-phone {
+  animation: realisticFloat 6s ease-in-out infinite;
+}
+
+.social-front-card {
+  animation: realisticFloat 7.5s ease-in-out infinite;
+}
+
+@keyframes realisticFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotateX(1deg);
+  }
+}
+
+.channel-network-glow {
+  animation: networkGlow 4s ease-in-out infinite;
+}
+
+@keyframes networkGlow {
+  0%, 100% {
+    opacity: .45;
+    transform: scale(.92);
+  }
+
+  50% {
+    opacity: .9;
+    transform: scale(1.08);
+  }
+}
+
+.network-line {
+  animation: networkFlow 2.5s linear infinite;
+}
+
+@keyframes networkFlow {
+  from {
+    opacity: .25;
+    filter: brightness(.8);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+
+  to {
+    opacity: .3;
+    filter: brightness(.9);
+  }
+}
+
+.ai-chat-particles span {
+  width: var(--particle-size, 3px);
+  height: var(--particle-size, 3px);
+  left: var(--particle-x);
+  top: var(--particle-y);
+  animation:
+    particleDrift
+    var(--particle-duration, 7s)
+    ease-in-out
+    var(--particle-delay, 0s)
+    infinite alternate;
+}
+
+@keyframes particleDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: .15;
+  }
+
+  to {
+    transform: translate3d(12px, -25px, 0);
+    opacity: .85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-message,
+  .phone-live-message,
+  .social-live-message,
+  .ai-chat-window,
+  .ai-phone,
+  .social-front-card,
+  .ai-chat-particles span {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================
+   REAL SOCIAL CHANNEL LOGOS
+========================================= */
+
+.channel-brand-icon {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  z-index: 8;
+
+  animation: channelBrandFloat 4s ease-in-out infinite;
+}
+
+
+/* Facebook */
+
+.facebook-icon {
+  top: 17%;
+  left: 12%;
+
+  color: #1877F2;
+
+  box-shadow:
+    0 0 25px rgba(24, 119, 242, 0.25),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Messenger */
+
+.messenger-icon {
+  top: 47%;
+  right: 8%;
+
+  color: #A855F7;
+
+  box-shadow:
+    0 0 25px rgba(168, 85, 247, 0.25),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+
+  animation-delay: -1.3s;
+}
+
+
+/* Instagram */
+
+.instagram-icon {
+  bottom: 14%;
+  left: 22%;
+
+  color: #E1306C;
+
+  box-shadow:
+    0 0 25px rgba(225, 48, 108, 0.25),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+
+  animation-delay: -2.5s;
+}
+
+
+@keyframes channelBrandFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+
+
+
+/* =========================================================
+   PREMIUM AI PLATFORM SECTIONS
+   Messenger + Instagram + WhatsApp
+========================================================= */
+
+.platform-ai-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 900px;
+  padding: 135px 0;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 12% 35%,
+      rgba(53, 255, 192, 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 70%,
+      rgba(16, 201, 133, 0.11),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(33, 243, 166, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #020907 0%,
+      #031510 35%,
+      #020b09 65%,
+      #010605 100%
+    );
+}
+
+/* =========================================================
+   MOVING ATMOSPHERE
+========================================================= */
+
+.platform-ai-section::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+
+  background:
+    radial-gradient(
+      ellipse at 25% 45%,
+      rgba(53, 255, 192, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      ellipse at 75% 60%,
+      rgba(53, 255, 192, 0.08),
+      transparent 25%
+    );
+
+  filter: blur(55px);
+
+  animation: platformAtmosphere 12s ease-in-out infinite alternate;
+
+  pointer-events: none;
+
+  z-index: -4;
+}
+
+@keyframes platformAtmosphere {
+  0% {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(4%, 2%, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-1%, 4%, 0) scale(1.02);
+  }
+}
+
+
+/* =========================================================
+   GREEN ENERGY BEAM
+========================================================= */
+
+.platform-ai-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 800px;
+  height: 180px;
+
+  left: 50%;
+  top: 48%;
+
+  transform: translate(-50%, -50%) rotate(-18deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(53, 255, 192, 0.055),
+      rgba(53, 255, 192, 0.12),
+      rgba(53, 255, 192, 0.055),
+      transparent
+    );
+
+  filter: blur(28px);
+
+  opacity: 0.7;
+
+  animation: energyBeam 9s ease-in-out infinite;
+
+  pointer-events: none;
+
+  z-index: -3;
+}
+
+@keyframes energyBeam {
+  0%,
+  100% {
+    transform: translate(-60%, -50%) rotate(-18deg);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: translate(-40%, -50%) rotate(-18deg);
+    opacity: 0.8;
+  }
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.platform-bg-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(53, 255, 192, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(53, 255, 192, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+
+  opacity: 0.65;
+
+  animation: gridMove 22s linear infinite;
+
+  pointer-events: none;
+
+  z-index: -2;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(55px, 55px, 0);
+  }
+}
+
+
+/* =========================================================
+   LARGE GREEN GLOWS
+========================================================= */
+
+.platform-glow {
+  position: absolute;
+
+  width: 620px;
+  height: 620px;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  animation: glowFloat 10s ease-in-out infinite alternate;
+
+  z-index: -1;
+}
+
+.platform-glow-one {
+  left: -280px;
+  top: 5%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(53, 255, 192, 0.16),
+      rgba(33, 243, 166, 0.06) 45%,
+      transparent 70%
+    );
+}
+
+.platform-glow-two {
+  right: -250px;
+  bottom: -10%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(16, 201, 133, 0.15),
+      rgba(53, 255, 192, 0.05) 45%,
+      transparent 70%
+    );
+
+  animation-delay: -4s;
+}
+
+@keyframes glowFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+  }
+
+  100% {
+    transform: translate3d(35px, -25px, 0) scale(1.1);
+  }
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.platform-particle {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 8px #35ffc0,
+    0 0 22px rgba(53, 255, 192, 0.8);
+
+  animation:
+    platformParticleFloat 6s ease-in-out infinite,
+    particlePulse 2s ease-in-out infinite;
+
+  z-index: 1;
+}
+
+.platform-particle-1 {
+  left: 8%;
+  top: 27%;
+}
+
+.platform-particle-2 {
+  left: 34%;
+  top: 13%;
+  animation-delay: -2s;
+}
+
+.platform-particle-3 {
+  right: 12%;
+  top: 30%;
+  animation-delay: -3.5s;
+}
+
+.platform-particle-4 {
+  right: 29%;
+  bottom: 17%;
+  animation-delay: -1s;
+}
+
+@keyframes platformParticleFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(12px, -28px, 0);
+  }
+}
+
+@keyframes particlePulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.platform-container {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: auto;
+
+  min-height: 610px;
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+.instagram-container {
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.platform-copy {
+  position: relative;
+
+  z-index: 10;
+}
+
+.platform-eyebrow {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(53, 255, 192, 0.14);
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(53, 255, 192, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.06),
+    0 0 25px rgba(53, 255, 192, 0.035);
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(20px);
+
+  animation: eyebrowGlow 4s ease-in-out infinite;
+}
+
+.platform-eyebrow > span {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    inset 0 0 12px rgba(255, 255, 255, 0.03);
+}
+
+.platform-eyebrow i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 8px #35ffc0,
+    0 0 18px rgba(53, 255, 192, 0.7);
+
+  animation: statusPulse 1.5s infinite;
+}
+
+@keyframes eyebrowGlow {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 1px rgba(255, 255, 255, 0.06),
+      0 0 20px rgba(53, 255, 192, 0.02);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 1px rgba(255, 255, 255, 0.08),
+      0 0 30px rgba(53, 255, 192, 0.1);
+  }
+}
+
+
+/* =========================================================
+   BRAND COLORS
+========================================================= */
+
+.messenger-eyebrow {
+  color: #8abaff;
+}
+
+.messenger-eyebrow > span {
+  color: #4d9aff;
+
+  box-shadow:
+    0 0 18px rgba(24, 119, 242, 0.15);
+}
+
+.instagram-eyebrow {
+  color: #f19abd;
+}
+
+.instagram-eyebrow > span {
+  color: #e1306c;
+}
+
+.whatsapp-eyebrow {
+  color: #7eeab0;
+}
+
+.whatsapp-eyebrow > span {
+  color: #25d366;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.platform-title {
+  margin: 27px 0 21px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-size: clamp(44px, 5vw, 70px);
+
+  line-height: 0.96;
+
+  letter-spacing: -0.05em;
+}
+
+.platform-title span {
+  color: #f3faf7;
+
+  text-shadow:
+    0 0 45px rgba(53, 255, 192, 0.04);
+}
+
+.platform-title strong {
+  position: relative;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      100deg,
+      #baffea 0%,
+      #35ffc0 30%,
+      #19e99d 65%,
+      #78ffd9 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  background-size: 200% auto;
+
+  animation: titleGradient 5s linear infinite;
+
+  filter:
+    drop-shadow(0 0 22px rgba(53, 255, 192, 0.16));
+}
+
+@keyframes titleGradient {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.platform-description {
+  max-width: 535px;
+
+  margin-bottom: 28px;
+
+  color: rgba(226, 241, 236, 0.64);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.platform-status {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: fit-content;
+
+  padding: 12px 14px;
+
+  margin-bottom: 27px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(53, 255, 192, 0.16);
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(53, 255, 192, 0.075),
+      rgba(53, 255, 192, 0.02)
+    );
+
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.05),
+    0 0 35px rgba(53, 255, 192, 0.035);
+
+  backdrop-filter: blur(18px);
+}
+
+.platform-status::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 80px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(53, 255, 192, 0.15),
+      transparent
+    );
+
+  transform: translateX(-120%);
+
+  animation: statusScan 4s ease-in-out infinite;
+}
+
+@keyframes statusScan {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+
+  75%,
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+.platform-status-icon {
+  width: 33px;
+  height: 33px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  color: #35ffc0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(53, 255, 192, 0.16),
+      rgba(53, 255, 192, 0.04)
+    );
+
+  box-shadow:
+    0 0 20px rgba(53, 255, 192, 0.08);
+}
+
+.platform-status > div:nth-child(2) {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.platform-status strong {
+  color: #e9faf4;
+
+  font-size: 11px;
+}
+
+.platform-status small {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 9px;
+}
+
+.platform-status > span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-left: 13px;
+
+  color: #35ffc0;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.platform-status > span i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 8px #35ffc0,
+    0 0 16px rgba(53, 255, 192, 0.7);
+
+  animation: statusPulse 1.4s infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.35;
+
+    transform: scale(0.65);
+  }
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.platform-features {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-bottom: 31px;
+}
+
+.platform-features > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.platform-features > div:hover {
+  transform: translateX(7px);
+}
+
+.platform-features > div > span {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  color: #35ffc0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(53, 255, 192, 0.13),
+      rgba(53, 255, 192, 0.035)
+    );
+
+  border: 1px solid rgba(53, 255, 192, 0.13);
+
+  box-shadow:
+    0 0 18px rgba(53, 255, 192, 0.04);
+
+  transition: 0.3s ease;
+}
+
+.platform-features > div:hover > span {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 0 25px rgba(53, 255, 192, 0.16);
+}
+
+.platform-features p {
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.platform-features strong {
+  color: rgba(255, 255, 255, 0.87);
+
+  font-size: 11px;
+}
+
+.platform-features small {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.platform-button {
+  position: relative;
+
+  overflow: hidden;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 19px;
+
+  border: 1px solid rgba(53, 255, 192, 0.35);
+
+  border-radius: 11px;
+
+  color: #02110c;
+
+  background:
+    linear-gradient(
+      110deg,
+      #6dffd6,
+      #35ffc0,
+      #19e99d,
+      #10c985,
+      #35ffc0
+    );
+
+  background-size: 250% auto;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 30px rgba(53, 255, 192, 0.12),
+    inset 0 1px rgba(255, 255, 255, 0.5);
+
+  animation: buttonGradient 5s linear infinite;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+@keyframes buttonGradient {
+  to {
+    background-position: 250% center;
+  }
+}
+
+.platform-button:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 15px 45px rgba(53, 255, 192, 0.25),
+    0 0 25px rgba(53, 255, 192, 0.15);
+}
+
+.platform-button > div {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.55),
+      transparent 75%
+    );
+
+  transform: translateX(-130%);
+
+  animation: buttonShine 3.8s infinite;
+}
+
+@keyframes buttonShine {
+  0%,
+  55% {
+    transform: translateX(-130%);
+  }
+
+  75%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.platform-visual {
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1200px;
+}
+
+
+/* =========================================================
+   VISUAL ENERGY CORE
+========================================================= */
+
+.platform-visual::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(53, 255, 192, 0.13),
+      rgba(53, 255, 192, 0.05) 35%,
+      transparent 70%
+    );
+
+  filter: blur(15px);
+
+  animation: visualCore 5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+@keyframes visualCore {
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.platform-orbit {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.platform-orbit-1 {
+  width: 610px;
+  height: 610px;
+
+  border: 1px solid rgba(53, 255, 192, 0.1);
+
+  box-shadow:
+    0 0 30px rgba(53, 255, 192, 0.025);
+
+  animation: orbitRotate 24s linear infinite;
+}
+
+.platform-orbit-2 {
+  width: 500px;
+  height: 500px;
+
+  border: 1px dashed rgba(53, 255, 192, 0.13);
+
+  animation: orbitRotateReverse 18s linear infinite;
+}
+
+.platform-orbit-1::after,
+.platform-orbit-2::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 10px #35ffc0,
+    0 0 30px rgba(53, 255, 192, 0.9);
+}
+
+.platform-orbit-1::after {
+  left: 50%;
+  top: -4px;
+}
+
+.platform-orbit-2::after {
+  right: 12%;
+  bottom: 6%;
+
+  background: #9effe0;
+}
+
+@keyframes orbitRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.platform-brand {
+  position: absolute;
+
+  width: 67px;
+  height: 67px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 12;
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(22px);
+
+  animation:
+    brandFloat 4s ease-in-out infinite,
+    brandPulse 3s ease-in-out infinite;
+}
+
+@keyframes brandFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-13px) rotate(2deg);
+  }
+}
+
+@keyframes brandPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+.messenger-brand {
+  top: 2%;
+  left: 13%;
+
+  color: #65aaff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 119, 242, 0.2),
+      rgba(53, 255, 192, 0.07)
+    );
+
+  border: 1px solid rgba(77, 154, 255, 0.35);
+
+  box-shadow:
+    0 0 35px rgba(24, 119, 242, 0.18),
+    0 0 70px rgba(53, 255, 192, 0.07);
+}
+
+.instagram-brand {
+  top: 2%;
+  right: 13%;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(225, 48, 108, 0.2),
+      rgba(150, 47, 191, 0.12),
+      rgba(53, 255, 192, 0.07)
+    );
+
+  border: 1px solid rgba(225, 48, 108, 0.35);
+
+  box-shadow:
+    0 0 35px rgba(225, 48, 108, 0.17),
+    0 0 70px rgba(53, 255, 192, 0.07);
+}
+
+.whatsapp-brand {
+  top: 2%;
+  left: 13%;
+
+  color: #49e987;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37, 211, 102, 0.2),
+      rgba(53, 255, 192, 0.1)
+    );
+
+  border: 1px solid rgba(37, 211, 102, 0.35);
+
+  box-shadow:
+    0 0 35px rgba(37, 211, 102, 0.18),
+    0 0 70px rgba(53, 255, 192, 0.09);
+}
+
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.platform-notification {
+  position: absolute;
+
+  z-index: 15;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 215px;
+
+  padding: 10px 12px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(7, 22, 19, 0.9),
+      rgba(5, 13, 14, 0.78)
+    );
+
+  border: 1px solid rgba(53, 255, 192, 0.12);
+
+  backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(53, 255, 192, 0.05);
+
+  animation:
+    notificationFloat 5s ease-in-out infinite,
+    notificationGlow 3s ease-in-out infinite;
+}
+
+.platform-notification > span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.platform-notification strong {
+  font-size: 9px;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.platform-notification small {
+  font-size: 8px;
+
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.platform-notification > b {
+  margin-left: auto;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #02100b;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 15px rgba(53, 255, 192, 0.4);
+
+  font-size: 8px;
+
+  animation: notificationBadge 1.8s ease-in-out infinite;
+}
+
+.messenger-notification {
+  top: 15%;
+  right: -5%;
+
+  color: #5fa7ff;
+}
+
+.instagram-notification {
+  top: 15%;
+  left: -5%;
+
+  color: #ef5f99;
+}
+
+.whatsapp-notification {
+  top: 15%;
+  right: -5%;
+
+  color: #38df77;
+}
+
+@keyframes notificationFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes notificationGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 25px 70px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(53, 255, 192, 0.03);
+  }
+
+  50% {
+    box-shadow:
+      0 25px 70px rgba(0, 0, 0, 0.4),
+      0 0 35px rgba(53, 255, 192, 0.1);
+  }
+}
+
+@keyframes notificationBadge {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+
+/* =========================================================
+   CHAT WINDOW
+========================================================= */
+
+.platform-chat {
+  position: relative;
+
+  width: 375px;
+  height: 530px;
+
+  z-index: 10;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(53, 255, 192, 0.16);
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(53, 255, 192, 0.11),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(16, 201, 133, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(8, 27, 22, 0.97),
+      rgba(4, 16, 14, 0.97),
+      rgba(3, 11, 10, 0.98)
+    );
+
+  backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 40px 110px rgba(0, 0, 0, 0.55),
+    0 0 80px rgba(53, 255, 192, 0.08),
+    inset 0 1px rgba(255, 255, 255, 0.07);
+
+  animation:
+    chatFloat 6s ease-in-out infinite,
+    chatBorderPulse 4s ease-in-out infinite;
+}
+
+@keyframes chatFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotateX(0.5deg);
+  }
+}
+
+@keyframes chatBorderPulse {
+  0%,
+  100% {
+    border-color: rgba(53, 255, 192, 0.12);
+  }
+
+  50% {
+    border-color: rgba(53, 255, 192, 0.28);
+  }
+}
+
+
+/* =========================================================
+   CHAT SCAN LINE
+========================================================= */
+
+.platform-chat::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: -20%;
+
+  height: 100px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(53, 255, 192, 0.07),
+      transparent
+    );
+
+  pointer-events: none;
+
+  z-index: 20;
+
+  animation: chatScan 7s linear infinite;
+}
+
+@keyframes chatScan {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(650px);
+  }
+}
+
+
+/* =========================================================
+   CHAT HEADER
+========================================================= */
+
+.platform-chat-header,
+.whatsapp-chat-header {
+  position: relative;
+
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 17px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(53, 255, 192, 0.08),
+      rgba(24, 119, 242, 0.04),
+      transparent
+    );
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.platform-chat-header::after,
+.whatsapp-chat-header::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 35%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #35ffc0,
+      transparent
+    );
+
+  box-shadow:
+    0 0 10px rgba(53, 255, 192, 0.5);
+
+  animation: headerLine 4s ease-in-out infinite;
+}
+
+@keyframes headerLine {
+  0%,
+  100% {
+    left: 0;
+    width: 25%;
+  }
+
+  50% {
+    left: 65%;
+    width: 35%;
+  }
+}
+
+.platform-chat-header > div:nth-child(2),
+.whatsapp-chat-header > div:nth-child(2) {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.platform-chat-header strong,
+.whatsapp-chat-header strong {
+  font-size: 11px;
+
+  color: #f3faf7;
+}
+
+.platform-chat-header small,
+.whatsapp-chat-header small {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 8px;
+}
+
+.platform-chat-header small i,
+.whatsapp-chat-header small i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 8px #35ffc0;
+
+  animation: statusPulse 1.4s infinite;
+}
+
+.platform-chat-header .chat-header-dots {
+  margin-left: auto;
+
+  display: flex;
+
+  gap: 3px;
+}
+
+.chat-header-dots span {
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================================
+   AVATARS
+========================================================= */
+
+.platform-chat-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+}
+
+.messenger-avatar {
+  color: #63a7ff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(24, 119, 242, 0.18),
+      rgba(53, 255, 192, 0.07)
+    );
+
+  border: 1px solid rgba(77, 154, 255, 0.22);
+
+  box-shadow:
+    0 0 20px rgba(24, 119, 242, 0.08);
+}
+
+.whatsapp-avatar {
+  color: #3ce47d;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 211, 102, 0.18),
+      rgba(53, 255, 192, 0.08)
+    );
+
+  border: 1px solid rgba(37, 211, 102, 0.2);
+}
+
+
+/* =========================================================
+   CHAT BODY
+========================================================= */
+
+.platform-chat-body,
+.instagram-chat-body,
+.whatsapp-chat-body {
+  height: calc(100% - 122px);
+
+  padding: 19px 15px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  position: relative;
+}
+
+.platform-chat-body::after,
+.instagram-chat-body::after,
+.whatsapp-chat-body::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(53, 255, 192, 0.055),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
+
+.chat-date,
+.whatsapp-date {
+  align-self: center;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  color: rgba(53, 255, 192, 0.4);
+
+  background: rgba(53, 255, 192, 0.035);
+
+  border: 1px solid rgba(53, 255, 192, 0.06);
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.chat-message {
+  display: flex;
+
+  gap: 7px;
+
+  max-width: 85%;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.customer-message {
+  align-self: flex-start;
+}
+
+.ai-message {
+  align-self: flex-end;
+
+  flex-direction: row-reverse;
+}
+
+.message-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.message-content > span {
+  padding: 10px 12px;
+
+  border-radius: 13px;
+
+  font-size: 9px;
+
+  line-height: 1.55;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.14);
+}
+
+.customer-message .message-content > span {
+  color: rgba(255, 255, 255, 0.76);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(53, 255, 192, 0.025)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+
+  border-bottom-left-radius: 3px;
+}
+
+.ai-message .message-content > span {
+  color: #032016;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8affdf,
+      #35ffc0 45%,
+      #19e99d
+    );
+
+  box-shadow:
+    0 8px 30px rgba(53, 255, 192, 0.12);
+
+  border-bottom-right-radius: 3px;
+}
+
+.message-content small {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  color: rgba(255, 255, 255, 0.24);
+
+  font-size: 7px;
+}
+
+.ai-message .message-content small {
+  justify-content: flex-end;
+}
+
+
+/* =========================================================
+   AVATAR PULSE
+========================================================= */
+
+.ai-avatar,
+.instagram-ai-avatar,
+.whatsapp-ai-avatar {
+  animation: avatarPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes avatarPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(53, 255, 192, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 18px rgba(53, 255, 192, 0.18);
+  }
+}
+
+
+/* =========================================================
+   MESSAGE APPEAR
+========================================================= */
+
+.messenger-message-1,
+.instagram-message-1,
+.whatsapp-message-1 {
+  animation: messageAppear 0.8s ease both;
+}
+
+.messenger-message-2,
+.instagram-message-2,
+.whatsapp-message-2 {
+  animation: messageAppear 0.8s 1s ease both;
+}
+
+.messenger-message-3,
+.whatsapp-message-3 {
+  animation: messageAppear 0.8s 2s ease both;
+}
+
+.messenger-message-4 {
+  animation: messageAppear 0.8s 3.2s ease both;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(14px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   TYPING
+========================================================= */
+
+.chat-typing {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  opacity: 0;
+
+  position: relative;
+
+  z-index: 4;
+
+  animation:
+    typingShow 0.7s 2.3s forwards;
+}
+
+.chat-typing > span {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 7px;
+}
+
+.typing-bubble {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  padding: 8px 10px;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(53, 255, 192, 0.1),
+      rgba(53, 255, 192, 0.035)
+    );
+
+  border: 1px solid rgba(53, 255, 192, 0.08);
+}
+
+.typing-bubble i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 6px rgba(53, 255, 192, 0.5);
+
+  animation: typingDot 1s infinite;
+}
+
+.typing-bubble i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-bubble i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typingDot {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.35;
+  }
+
+  30% {
+    transform: translateY(-4px);
+
+    opacity: 1;
+  }
+}
+
+@keyframes typingShow {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   CHAT INPUT
+========================================================= */
+
+.platform-chat-input {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 13px;
+
+  border-top: 1px solid rgba(53, 255, 192, 0.09);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 17, 14, 0.97),
+      rgba(5, 21, 18, 0.94)
+    );
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 9px;
+
+  backdrop-filter: blur(25px);
+}
+
+.platform-chat-input::before {
+  content: "";
+
+  width: 1px;
+  height: 12px;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 7px #35ffc0;
+
+  animation: inputCursor 1s infinite;
+}
+
+@keyframes inputCursor {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.platform-chat-input > div {
+  margin-left: auto;
+
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  color: #02100b;
+
+  background:
+    linear-gradient(
+      135deg,
+      #78ffda,
+      #35ffc0,
+      #19e99d
+    );
+
+  box-shadow:
+    0 0 20px rgba(53, 255, 192, 0.15);
+
+  animation: sendPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes sendPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.07);
+
+    box-shadow:
+      0 0 28px rgba(53, 255, 192, 0.3);
+  }
+}
+
+
+/* =========================================================
+   RESPONSE CARD
+========================================================= */
+
+.platform-response-card {
+  position: absolute;
+
+  z-index: 16;
+
+  bottom: 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 11px 13px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 25, 20, 0.92),
+      rgba(5, 14, 14, 0.82)
+    );
+
+  border: 1px solid rgba(53, 255, 192, 0.16);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(53, 255, 192, 0.07);
+
+  animation:
+    responseFloat 5s ease-in-out infinite,
+    responsePulse 3s ease-in-out infinite;
+}
+
+.platform-response-card > span {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #35ffc0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(53, 255, 192, 0.15),
+      rgba(53, 255, 192, 0.04)
+    );
+
+  box-shadow:
+    0 0 15px rgba(53, 255, 192, 0.08);
+}
+
+.platform-response-card > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.platform-response-card strong {
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 9px;
+}
+
+.platform-response-card small {
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 7px;
+}
+
+.platform-response-card > i {
+  width: 5px;
+  height: 5px;
+
+  margin-left: 8px;
+
+  border-radius: 50%;
+
+  background: #35ffc0;
+
+  box-shadow:
+    0 0 9px #35ffc0;
+
+  animation: statusPulse 1.5s infinite;
+}
+
+.messenger-response,
+.whatsapp-response {
+  right: -10px;
+}
+
+.instagram-response {
+  left: -10px;
+}
+
+@keyframes responseFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes responsePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 25px 65px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(53, 255, 192, 0.04);
+  }
+
+  50% {
+    box-shadow:
+      0 25px 65px rgba(0, 0, 0, 0.4),
+      0 0 35px rgba(53, 255, 192, 0.13);
+  }
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.instagram-chat {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(225, 48, 108, 0.11),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(53, 255, 192, 0.09),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(25, 9, 20, 0.97),
+      rgba(9, 17, 17, 0.97),
+      rgba(4, 13, 12, 0.98)
+    );
+}
+
+.instagram-profile-avatar,
+.instagram-large-avatar {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #feda75,
+      #fa7e1e,
+      #d62976,
+      #962fbf,
+      #4f5bd5
+    );
+
+  box-shadow:
+    0 0 25px rgba(225, 48, 108, 0.15);
+}
+
+.instagram-profile-avatar {
+  width: 29px;
+  height: 29px;
+}
+
+.instagram-large-avatar {
+  width: 48px;
+  height: 48px;
+}
+
+.instagram-top-bar {
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 15px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(225, 48, 108, 0.08),
+      rgba(53, 255, 192, 0.035),
+      transparent
+    );
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.instagram-back {
+  font-size: 20px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.instagram-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-left: 10px;
+}
+
+.instagram-profile strong {
+  display: block;
+
+  color: white;
+
+  font-size: 10px;
+}
+
+.instagram-profile small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 7px;
+}
+
+.instagram-actions {
+  margin-left: auto;
+
+  display: flex;
+
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.instagram-chat-body {
+  height: calc(100% - 116px);
+
+  padding: 15px;
+}
+
+.instagram-profile-intro {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 10px;
+}
+
+.instagram-profile-intro strong {
+  color: #fff;
+
+  font-size: 10px;
+}
+
+.instagram-profile-intro span {
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 7px;
+}
+
+.instagram-comment-event {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 2px;
+
+  padding: 9px 10px;
+
+  border-radius: 10px;
+
+  color: #ef6b9e;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(225, 48, 108, 0.09),
+      rgba(53, 255, 192, 0.035)
+    );
+
+  border: 1px solid rgba(225, 48, 108, 0.12);
+
+  animation:
+    messageAppear 0.8s 3s both,
+    commentPulse 3s 4s ease-in-out infinite;
+}
+
+.instagram-comment-event span {
+  flex: 1;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 7px;
+}
+
+.instagram-input {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.instagram-input > svg {
+  color: #e1306c;
+}
+
+@keyframes commentPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 rgba(225, 48, 108, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(225, 48, 108, 0.1);
+  }
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp-chat {
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(37, 211, 102, 0.13),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 85%,
+      rgba(53, 255, 192, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(4, 22, 15, 0.98),
+      rgba(4, 16, 13, 0.98),
+      rgba(2, 11, 9, 0.98)
+    );
+}
+
+.whatsapp-chat-body {
+  background:
+    radial-gradient(
+      rgba(37, 211, 102, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 19px 19px;
+}
+
+.whatsapp-date {
+  color: rgba(37, 211, 102, 0.5);
+
+  background: rgba(37, 211, 102, 0.04);
+
+  border: 1px solid rgba(37, 211, 102, 0.08);
+}
+
+.whatsapp-message-2 .message-content > span {
+  background:
+    linear-gradient(
+      135deg,
+      #73f7a1,
+      #25d366,
+      #19bd59
+    );
+
+  box-shadow:
+    0 8px 30px rgba(37, 211, 102, 0.15);
+}
+
+.whatsapp-ai-action {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 3px;
+
+  padding: 9px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(37, 211, 102, 0.09),
+      rgba(53, 255, 192, 0.035)
+    );
+
+  border: 1px solid rgba(37, 211, 102, 0.12);
+
+  animation:
+    messageAppear 0.8s 4s both,
+    actionPulse 3s 5s ease-in-out infinite;
+}
+
+.whatsapp-ai-action > span {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  color: #25d366;
+
+  background: rgba(37, 211, 102, 0.11);
+}
+
+.whatsapp-ai-action div {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.whatsapp-ai-action strong {
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 8px;
+}
+
+.whatsapp-ai-action small {
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 7px;
+}
+
+.whatsapp-ai-action > svg {
+  color: #25d366;
+}
+
+.whatsapp-input > div {
+  background:
+    linear-gradient(
+      135deg,
+      #6ff49b,
+      #25d366,
+      #19bd59
+    );
+}
+
+@keyframes actionPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 rgba(37, 211, 102, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(37, 211, 102, 0.12);
+  }
+}
+
+
+/* =========================================================
+   EXTRA PLATFORM COLOR AURA
+========================================================= */
+
+.messenger-ai-section {
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(24, 119, 242, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 18% 55%,
+      rgba(53, 255, 192, 0.13),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #020907,
+      #031510,
+      #020b09
+    );
+}
+
+.instagram-ai-section {
+  background:
+    radial-gradient(
+      circle at 25% 45%,
+      rgba(225, 48, 108, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 75% 60%,
+      rgba(53, 255, 192, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #080306,
+      #07100d,
+      #020907
+    );
+}
+
+.whatsapp-ai-section {
+  background:
+    radial-gradient(
+      circle at 78% 45%,
+      rgba(37, 211, 102, 0.1),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 18% 60%,
+      rgba(53, 255, 192, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #020907,
+      #031610,
+      #020a08
+    );
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .platform-container,
+  .instagram-container {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+
+    text-align: center;
+  }
+
+  .platform-copy {
+    order: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .platform-visual {
+    order: 2;
+  }
+
+  .platform-description {
+    max-width: 650px;
+  }
+
+  .platform-features {
+    width: 100%;
+    max-width: 450px;
+
+    text-align: left;
+  }
+
+  .platform-orbit-1 {
+    width: 540px;
+    height: 540px;
+  }
+
+  .platform-orbit-2 {
+    width: 430px;
+    height: 430px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .platform-ai-section {
+    min-height: auto;
+
+    padding: 90px 0;
+  }
+
+  .platform-container {
+    width: min(100% - 28px, 500px);
+  }
+
+  .platform-title {
+    font-size: 42px;
+  }
+
+  .platform-description {
+    font-size: 13px;
+  }
+
+  .platform-visual {
+    min-height: 570px;
+  }
+
+  .platform-chat {
+    width: min(
+      375px,
+      calc(100vw - 48px)
+    );
+
+    height: 495px;
+  }
+
+  .platform-orbit-1 {
+    width: 440px;
+    height: 440px;
+  }
+
+  .platform-orbit-2 {
+    width: 350px;
+    height: 350px;
+  }
+
+  .platform-brand {
+    width: 56px;
+    height: 56px;
+  }
+
+  .platform-notification {
+    min-width: 175px;
+
+    transform: scale(0.84);
+  }
+
+  .messenger-notification,
+  .whatsapp-notification {
+    right: -8px;
+  }
+
+  .instagram-notification {
+    left: -8px;
+  }
+
+  .platform-response-card {
+    transform: scale(0.84);
+  }
+
+  .messenger-response,
+  .whatsapp-response {
+    right: -14px;
+  }
+
+  .instagram-response {
+    left: -14px;
+  }
+
+  .platform-status {
+    max-width: 100%;
+  }
+}

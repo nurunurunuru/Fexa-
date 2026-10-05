@@ -1,14 +1,31 @@
+
+import { useMemo } from "react";
+
 export default function FloatingParticles() {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 28 }, (_, index) => ({
+        id: index,
+        x: `${(index * 37 + 13) % 100}%`,
+        y: `${(index * 53 + 7) % 100}%`,
+        delay: `${(index % 9) * -0.7}s`,
+        duration: `${5 + (index % 6)}s`,
+        size: `${2 + (index % 3)}px`,
+      })),
+    []
+  );
+
   return (
     <div className="ai-chat-particles">
-      {Array.from({ length: 28 }).map((_, index) => (
+      {particles.map((particle) => (
         <span
-          key={index}
+          key={particle.id}
           style={{
-            "--particle-x": `${Math.random() * 100}%`,
-            "--particle-y": `${Math.random() * 100}%`,
-            "--particle-delay": `${Math.random() * 5}s`,
-            "--particle-duration": `${4 + Math.random() * 5}s`,
+            "--particle-x": particle.x,
+            "--particle-y": particle.y,
+            "--particle-delay": particle.delay,
+            "--particle-duration": particle.duration,
+            "--particle-size": particle.size,
           }}
         />
       ))}

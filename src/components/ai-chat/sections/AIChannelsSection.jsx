@@ -7,6 +7,12 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaFacebookMessenger,
+} from "react-icons/fa";
+
 import ChannelNetwork from "../components/ChannelNetwork";
 
 export default function AIChannelsSection() {
@@ -49,6 +55,21 @@ export default function AIChannelsSection() {
 
             <ChannelNetwork />
 
+            {/* Facebook */}
+            <div className="channel-brand-icon facebook-icon">
+              <FaFacebookF />
+            </div>
+
+            {/* Messenger */}
+            <div className="channel-brand-icon messenger-icon">
+              <FaFacebookMessenger />
+            </div>
+
+            {/* Instagram */}
+            <div className="channel-brand-icon instagram-icon">
+              <FaInstagram />
+            </div>
+
             {/* Floating status cards */}
             <div className="channel-floating-card channel-card-top">
               <span className="channel-card-icon">
@@ -63,7 +84,7 @@ export default function AIChannelsSection() {
               <i />
             </div>
 
-            <div className="channel-floating-card channel-card-bottom">
+            {/* <div className="channel-floating-card channel-card-bottom">
               <span className="channel-card-icon">
                 <MessageCircle size={13} />
               </span>
@@ -76,7 +97,7 @@ export default function AIChannelsSection() {
               <b>
                 <CheckCircle2 size={12} />
               </b>
-            </div>
+            </div> */}
 
           </div>
 
@@ -127,7 +148,6 @@ export default function AIChannelsSection() {
 
             <div className="channel-step channel-step-active">
               <b>1</b>
-
               <span className="step-line" />
 
               <div>
@@ -140,7 +160,6 @@ export default function AIChannelsSection() {
 
             <div className="channel-step">
               <b>2</b>
-
               <span className="step-line" />
 
               <div>
@@ -153,7 +172,6 @@ export default function AIChannelsSection() {
 
             <div className="channel-step">
               <b>3</b>
-
               <span className="step-line" />
 
               <div>
@@ -166,7 +184,6 @@ export default function AIChannelsSection() {
 
             <div className="channel-step">
               <b>4</b>
-
               <span className="step-line" />
 
               <div>
